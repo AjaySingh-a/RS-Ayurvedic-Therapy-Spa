@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-const WA_NUMBER = '918920826570'
+const WA_NUMBER = '919528683405'
 const waLink = msg => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`
 
-const SERVICES = [
+const FEATURED = [
   {
     img: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=900&auto=format&fit=crop',
     alt: 'Spa setting with towels, candles and oils',
@@ -15,7 +16,7 @@ const SERVICES = [
   },
   {
     img: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=900&auto=format&fit=crop',
-    alt: 'Herbal oil being poured',
+    alt: 'Herbal oil being poured over forehead',
     sk: 'शिरोधारा · Mind & sleep',
     title: 'Shirodhara',
     desc: 'A steady stream of warm medicated oil poured gently over the forehead. Deeply calming — loved by guests dealing with stress, anxiety and restless sleep.',
@@ -24,46 +25,18 @@ const SERVICES = [
   },
   {
     img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=900&auto=format&fit=crop',
-    alt: 'Warm herbal compress and spa stones',
+    alt: 'Warm herbal compress pouches',
     sk: 'पोटली · Pain relief',
     title: 'Potli Massage',
     desc: 'Heated herbal pouches pressed along the body\'s marma points. Wonderful for joint pain, stiffness and muscle recovery after long days on your feet.',
     duration: '60 min',
     wa: 'Potli (herbal compress) massage',
   },
-  {
-    img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=900&auto=format&fit=crop',
-    alt: 'Deep tissue massage on shoulders',
-    sk: 'Therapeutic · Firm pressure',
-    title: 'Deep Tissue',
-    desc: 'Focused, firm-pressure work on knots and chronic tightness in the back, neck and shoulders. Ideal if you sit long hours or train hard.',
-    duration: '60–90 min',
-    wa: 'Deep Tissue massage',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=900&auto=format&fit=crop',
-    alt: 'Relaxing aromatherapy oils',
-    sk: 'Classic · Relaxation',
-    title: 'Swedish Relaxation',
-    desc: 'A gentle, flowing aromatherapy massage for pure unwinding. Light-to-medium pressure, soft music and warm oils — perfect for first-time spa guests.',
-    duration: '60 min',
-    wa: 'Swedish relaxation massage',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?q=80&w=900&auto=format&fit=crop',
-    alt: 'Head and shoulder massage',
-    sk: 'Express · Quick reset',
-    title: 'Head, Neck & Foot Therapy',
-    desc: 'Express champi-style head massage with neck, shoulder and foot reflexology. A 30-minute reset between meetings, trains or sightseeing in Pahar Ganj.',
-    duration: '30–45 min',
-    wa: 'Head, neck & foot therapy',
-  },
 ]
 
 export default function Services() {
   useEffect(() => {
     if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches) return
-
     const cards = document.querySelectorAll('.tilt')
     const handlers = []
     cards.forEach(card => {
@@ -92,8 +65,9 @@ export default function Services() {
           <h2>Rituals rooted in Ayurveda</h2>
           <p>Every session begins with a short consultation, so the therapy, oils and pressure are matched to your body — not the other way around.</p>
         </div>
+
         <div className="svc-grid stagger">
-          {SERVICES.map((svc, i) => (
+          {FEATURED.map((svc, i) => (
             <article key={i} className="svc rv tilt">
               <div className="svc-img">
                 <img loading="lazy" src={svc.img} alt={svc.alt} />
@@ -115,6 +89,16 @@ export default function Services() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="svc-view-all rv">
+          <p>Explore our full collection of 20+ Ayurvedic &amp; wellness therapies</p>
+          <Link to="/services" className="btn btn-gold">
+            View All Therapies
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

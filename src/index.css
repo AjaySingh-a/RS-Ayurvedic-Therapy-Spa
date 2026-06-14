@@ -402,7 +402,9 @@ footer{border-top:1px solid var(--line);padding:2.6rem 0 2.2rem;background:var(-
   .map-frame,.map-frame iframe{min-height:300px}
   .marquee{padding:.85rem 0}
   .wa-tip{display:none}
-  .foot{justify-content:center;text-align:center}
+  .foot{justify-content:center;text-align:center;flex-direction:column;align-items:center;gap:1rem}
+  .foot-nav{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1.2rem;text-align:center;justify-items:center}
+  footer{padding-bottom:5.5rem}
 }
 @media (max-width:380px){
   .hero h1{font-size:2.15rem}
@@ -447,3 +449,179 @@ footer{border-top:1px solid var(--line);padding:2.6rem 0 2.2rem;background:var(-
 }
 
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ---------- footer nav ---------- */
+.foot{flex-wrap:wrap;gap:1.2rem}
+.foot-nav{display:flex;flex-wrap:wrap;gap:1.2rem 2rem;font-size:.82rem;font-weight:600;letter-spacing:.04em}
+.foot-nav a{color:var(--cream-dim);transition:color .25s}
+.foot-nav a:hover{color:var(--gold)}
+
+/* ---------- page hero (inner pages) ---------- */
+.page-hero{
+  padding:clamp(7rem,14vw,10rem) 0 clamp(3rem,6vw,5rem);
+  background:
+    radial-gradient(900px 400px at 70% -20%,rgba(62,107,76,.45),transparent 60%),
+    radial-gradient(600px 400px at -5% 120%,rgba(226,169,59,.1),transparent 55%),
+    var(--ink);
+  border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.page-hero::after{
+  content:"";position:absolute;right:-8%;top:50%;translate:0 -50%;
+  width:min(420px,60vw);aspect-ratio:1;border-radius:50%;
+  border:1px solid var(--line);opacity:.35;pointer-events:none;
+}
+.page-hero .eyebrow{margin-bottom:.8rem}
+.page-hero h1{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;color:var(--cream);margin:.4rem 0 1rem}
+.page-hero .lead{color:var(--cream-dim);font-size:1.06rem;max-width:52ch}
+
+/* ---------- services page ---------- */
+.svc-page-section{padding-top:2.5rem}
+.svc-controls{display:flex;flex-direction:column;gap:1.2rem;margin-bottom:1.6rem}
+.svc-search-wrap{
+  display:flex;align-items:center;gap:.8rem;
+  background:var(--ink-2);border:1px solid var(--line);border-radius:14px;
+  padding:.85rem 1.1rem;color:var(--cream-dim);
+  transition:border-color .25s,box-shadow .25s;max-width:480px;
+}
+.svc-search-wrap:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px rgba(226,169,59,.15)}
+.svc-search-input{
+  flex:1;background:none;border:none;outline:none;color:var(--cream);
+  font-family:var(--font-body);font-size:.95rem;
+}
+.svc-search-input::placeholder{color:var(--cream-dim)}
+.svc-search-clear{
+  background:none;border:none;color:var(--cream-dim);cursor:pointer;
+  display:grid;place-items:center;padding:.1rem;border-radius:4px;
+  transition:color .2s;
+}
+.svc-search-clear:hover{color:var(--cream)}
+.svc-filter-row{display:flex;flex-wrap:wrap;gap:.6rem}
+.svc-results-meta{
+  font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--cream-dim);margin-bottom:1.8rem;
+}
+.svc-grid-page{grid-template-columns:repeat(3,1fr)}
+.svc-cat-badge{
+  position:absolute;top:.75rem;left:.75rem;z-index:2;
+  background:rgba(19,36,26,.85);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:999px;
+  font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);padding:.28rem .7rem;
+}
+.svc-price{
+  display:block;font-size:.78rem;font-weight:700;color:var(--gold);
+  margin-top:.3rem;letter-spacing:.02em;
+}
+.svc-foot{align-items:flex-end}
+.svc-empty{
+  text-align:center;padding:5rem 1rem;display:flex;flex-direction:column;
+  align-items:center;gap:1.2rem;color:var(--cream-dim);
+}
+.svc-empty p{max-width:36ch;font-size:.98rem}
+.svc-book-cta{
+  margin-top:clamp(3rem,7vw,5rem);text-align:center;
+  background:var(--ink-2);border:1px solid var(--line);border-radius:24px;
+  padding:clamp(2rem,5vw,3.5rem);
+}
+.svc-book-cta h3{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:.7rem}
+.svc-book-cta p{color:var(--cream-dim);max-width:44ch;margin:0 auto 1.8rem}
+
+/* ---------- services view-all cta (homepage) ---------- */
+.svc-view-all{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.2rem;
+  margin-top:clamp(2rem,4vw,3rem);
+  padding:1.6rem 2rem;
+  background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius);
+}
+.svc-view-all p{color:var(--cream-dim);font-size:.95rem}
+
+/* ---------- testimonials ---------- */
+.testimonials-section{background:var(--ink-2);border-block:1px solid var(--line)}
+.testimonials-head{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  flex-wrap:wrap;gap:2rem;margin-bottom:clamp(2rem,5vw,3.5rem);
+}
+.google-rating-badge{
+  display:flex;align-items:center;gap:.9rem;
+  background:var(--ink-3);border:1px solid var(--line);border-radius:16px;
+  padding:1rem 1.4rem;flex:none;
+}
+.google-score{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--gold)}
+.stars{display:flex;gap:.2rem;align-items:center}
+.reviews-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;
+}
+.review-card{
+  background:var(--ink-3);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.5rem;display:flex;flex-direction:column;gap:.85rem;
+  transition:border-color .35s,transform .35s var(--ease);
+}
+.review-card:hover{border-color:rgba(226,169,59,.35);transform:translateY(-4px)}
+.review-top{display:flex;align-items:center;gap:.85rem}
+.review-avatar{
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:#fff;flex:none;
+}
+.review-name{font-weight:700;font-size:.95rem;color:var(--cream)}
+.review-loc{font-size:.76rem;color:var(--cream-dim);letter-spacing:.04em}
+.review-text{font-size:.88rem;color:var(--cream-dim);line-height:1.75;flex:1}
+.review-date{font-size:.74rem;color:var(--cream-dim);opacity:.65;letter-spacing:.06em}
+
+/* ---------- about page ---------- */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
+.about-img-wrap{position:relative}
+.about-stats-bar{background:var(--ink-2);border-block:1px solid var(--line);padding:2.4rem 0}
+.about-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center}
+.about-stat b{font-family:var(--font-display);font-size:2rem;color:var(--gold);display:block;line-height:1.1}
+.about-stat span{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);font-weight:600}
+
+/* ---------- contact page ---------- */
+.reach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:1.4rem}
+.reach-card{
+  background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;
+}
+.reach-card .ic{
+  width:42px;height:42px;flex:none;border-radius:11px;background:rgba(226,169,59,.12);
+  display:grid;place-items:center;color:var(--gold);
+}
+.reach-card h4{font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;font-family:var(--font-body)}
+.reach-card p{font-size:.9rem;color:var(--cream-dim);line-height:1.65}
+.reach-section .eyebrow{margin-bottom:0}
+
+/* ---------- booking page ---------- */
+.booking-info-cards{display:flex;flex-direction:column;gap:.75rem;margin-top:1.8rem;margin-bottom:1.2rem}
+.binfo-card{
+  display:flex;align-items:center;gap:.8rem;
+  font-size:.9rem;color:var(--cream-dim);
+}
+.binfo-card svg{color:var(--gold);flex:none}
+
+/* =========================================================
+   RESPONSIVE — new components
+   ========================================================= */
+@media (max-width:1024px){
+  .reviews-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .about-stats{grid-template-columns:repeat(2,1fr)}
+  .reach-grid{grid-template-columns:1fr 1fr}
+  .svc-grid-page{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .testimonials-head{flex-direction:column}
+  .google-rating-badge{align-self:flex-start}
+  .svc-view-all{flex-direction:column;align-items:flex-start}
+  .about-stats{grid-template-columns:repeat(2,1fr)}
+  .foot-nav{gap:.8rem 1.4rem}
+}
+@media (max-width:600px){
+  .reviews-grid{grid-template-columns:1fr}
+  .svc-grid-page{grid-template-columns:1fr}
+  .reach-grid{grid-template-columns:1fr}
+  .about-stats{grid-template-columns:1fr 1fr}
+  .about-stat b{font-size:1.6rem}
+  .page-hero h1{font-size:clamp(1.9rem,7vw,2.6rem)}
+  .svc-book-cta{padding:1.5rem}
+  .svc-view-all{padding:1.2rem}
+}

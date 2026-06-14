@@ -1,8 +1,17 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+
+const NAV_LINKS = [
+  { to: '/services', label: 'Therapies' },
+  { to: '/about', label: 'About Us' },
+  { to: '/booking', label: 'Book a Visit' },
+  { to: '/contact', label: 'Contact' },
+]
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
@@ -11,20 +20,9 @@ export default function Nav() {
   }, [])
 
   useEffect(() => {
-    const sections = ['services', 'finder', 'why', 'book', 'visit']
-      .map(id => document.getElementById(id))
-      .filter(Boolean)
-    const links = document.querySelectorAll('.nav-links a')
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id))
-        }
-      })
-    }, { rootMargin: '-45% 0px -50% 0px' })
-    sections.forEach(s => io.observe(s))
-    return () => io.disconnect()
-  }, [])
+    setMenuOpen(false)
+    document.body.style.overflow = ''
+  }, [pathname])
 
   const closeMenu = () => {
     setMenuOpen(false)
@@ -42,27 +40,32 @@ export default function Nav() {
   return (
     <nav id="nav" className={scrolled ? 'scrolled' : ''}>
       <div className="wrap nav-in">
-        <a href="#top" className="brand">
+        <Link to="/" className="brand">
           <span className="leaf-mark">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M12 21c6-2 8-7 8-13-6 0-11 2-13 8M12 21c-1-4-1-7 2-11M12 21H6c-2-3-2-6-1-8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>
           <span>RS Ayurvedic<small>Therapy Spa · Delhi</small></span>
-        </a>
+        </Link>
 
         <div className={`nav-links${menuOpen ? ' open' : ''}`}>
-          <a href="#services" onClick={closeMenu}>Therapies</a>
-          <a href="#finder" onClick={closeMenu}>Find your therapy</a>
-          <a href="#why" onClick={closeMenu}>Why us</a>
-          <a href="#book" onClick={closeMenu}>Book a visit</a>
-          <a href="#visit" onClick={closeMenu}>Visit us</a>
+          {NAV_LINKS.map(link => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={pathname === link.to ? 'active' : ''}
+              onClick={closeMenu}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '.7rem' }}>
           <a
             className="nav-cta"
-            href="https://wa.me/918920826570?text=Hi%20RS%20Ayurvedic%20Therapy%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20your%20therapies."
+            href="https://wa.me/919528683405?text=Hi%20RS%20Ayurvedic%20Therapy%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20your%20therapies."
             target="_blank"
             rel="noopener noreferrer"
           >

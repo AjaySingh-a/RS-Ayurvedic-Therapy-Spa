@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const LEAVES = [
   { left: '8%', top: '24%', t: '14s', dl: '0s', size: 26 },
@@ -74,13 +75,13 @@ export default function Hero() {
             Traditional Ayurvedic massage and therapy — warm herbal oils, skilled hands and time-honoured techniques, two minutes from Ramakrishna Ashram Marg metro.
           </p>
           <div className="hero-ctas h-anim" style={{ '--d': '.52s' }}>
-            <a className="btn btn-gold" href="#book">
+            <Link className="btn btn-gold" to="/booking">
               Book your session
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </a>
-            <a className="btn btn-ghost" href="#services">Explore therapies</a>
+            </Link>
+            <Link className="btn btn-ghost" to="/services">Explore therapies</Link>
           </div>
           <div className="hero-stats h-anim" style={{ '--d': '.68s' }}>
             <div>
