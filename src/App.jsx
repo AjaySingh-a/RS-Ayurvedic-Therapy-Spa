@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
@@ -8,28 +8,33 @@ import ServicesPage from './pages/ServicesPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import BookingPage from './pages/BookingPage'
+import AdminApp from './admin/AdminApp'
 import './index.css'
 
-function ScrollToTop() {
+function PublicLayout() {
   const { pathname } = useLocation()
   useEffect(() => { window.scrollTo(0, 0) }, [pathname])
-  return null
+  return (
+    <>
+      <FloatingActions />
+      <Nav />
+      <Outlet />
+      <Footer />
+    </>
+  )
 }
 
 export default function App() {
   return (
-    <>
-      <ScrollToTop />
-      <FloatingActions />
-      <Nav />
-      <Routes>
+    <Routes>
+      <Route element={<PublicLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/booking" element={<BookingPage />} />
-      </Routes>
-      <Footer />
-    </>
+      </Route>
+      <Route path="/admin/*" element={<AdminApp />} />
+    </Routes>
   )
 }
