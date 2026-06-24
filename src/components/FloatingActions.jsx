@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const WA_HREF = "https://wa.me/919528683405?text=Hi%20RS%20Ayurvedic%20Therapy%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20your%20therapies."
+const WA_HREF = "https://wa.me/919528683405?text=Hi%20RS%20Therapy%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20your%20therapies."
 
 export default function FloatingActions() {
   const progressRef = useRef(null)

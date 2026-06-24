@@ -46,7 +46,7 @@ export default function Nav() {
               <path d="M12 21c6-2 8-7 8-13-6 0-11 2-13 8M12 21c-1-4-1-7 2-11M12 21H6c-2-3-2-6-1-8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>
-          <span>RS Ayurvedic<small>Therapy Spa · Delhi</small></span>
+          <span>RS Therapy<small>Spa · Delhi</small></span>
         </Link>
 
         <div className={`nav-links${menuOpen ? ' open' : ''}`}>
@@ -65,7 +65,7 @@ export default function Nav() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '.7rem' }}>
           <a
             className="nav-cta"
-            href="https://wa.me/919528683405?text=Hi%20RS%20Ayurvedic%20Therapy%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20your%20therapies."
+            href="https://wa.me/919528683405?text=Hi%20RS%20Therapy%20Spa%2C%20I%27d%20like%20to%20enquire%20about%20your%20therapies."
             target="_blank"
             rel="noopener noreferrer"
           >

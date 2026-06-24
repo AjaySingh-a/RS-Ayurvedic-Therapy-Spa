@@ -47,7 +47,7 @@ export default function Contact() {
               <div>
                 <h4>Open hours</h4>
                 <div className="hours">
-                  <span><b>Mon – Sun</b></span><span>10:00 AM – 9:30 PM</span>
+                  <span><b>Mon – Sun</b></span><span>Open 24 Hours</span>
                   <span><b>Walk-ins</b></span><span>Welcome, booking preferred</span>
                 </div>
               </div>
@@ -69,7 +69,7 @@ export default function Contact() {
 
           <div className="map-frame rv-r">
             <iframe
-              title="RS Ayurvedic Therapy Spa location"
+              title="RS Therapy Spa location"
               src="https://www.google.com/maps?q=Nalwa%20Street%2C%20Pahar%20Ganj%2C%20New%20Delhi%20110055&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

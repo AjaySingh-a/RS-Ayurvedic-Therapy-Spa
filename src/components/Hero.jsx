@@ -72,7 +72,7 @@ export default function Hero() {
             Ancient healing,<br />for the <em>modern body</em>
           </h1>
           <p className="lead h-anim" style={{ '--d': '.38s' }}>
-            Traditional Ayurvedic massage and therapy — warm herbal oils, skilled hands and time-honoured techniques, two minutes from Ramakrishna Ashram Marg metro.
+            Relaxing oil massage done right — warm oils, skilled hands and time-honoured techniques, two minutes from Ramakrishna Ashram Marg metro.
           </p>
           <div className="hero-ctas h-anim" style={{ '--d': '.52s' }}>
             <Link className="btn btn-gold" to="/booking">
@@ -85,16 +85,16 @@ export default function Hero() {
           </div>
           <div className="hero-stats h-anim" style={{ '--d': '.68s' }}>
             <div>
-              <b><span className="count" data-to="7">0</span>+</b>
-              <span>Signature therapies</span>
+              <b><span className="count" data-to="12">0</span>+</b>
+              <span>Massage styles</span>
             </div>
             <div>
               <b><span className="count" data-to="100">0</span>%</b>
-              <span>Herbal oils</span>
+              <span>Pure oils</span>
             </div>
             <div>
-              <b><span className="count" data-to="7">0</span> days</b>
-              <span>Open weekly</span>
+              <b><span className="count" data-to="24">0</span> hrs</b>
+              <span>Open daily</span>
             </div>
           </div>
         </div>
@@ -102,11 +102,11 @@ export default function Hero() {
         <div className="hero-card">
           <img
             src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1100&auto=format&fit=crop"
-            alt="Warm oil Ayurvedic back massage with herbs"
+            alt="Warm oil full body back massage"
           />
           <div className="hero-badge">
             <span>Signature</span>
-            Abhyanga — warm oil full-body ritual
+            Full Body Oil Massage — warm oil, head to toe
           </div>
         </div>
       </div>

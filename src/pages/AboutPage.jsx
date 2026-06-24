@@ -9,8 +9,8 @@ const VALUES = [
         <path d="M12 21c-1-4-1-7 2-11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
       </svg>
     ),
-    title: 'Genuine Ayurveda',
-    desc: 'We use traditional herbal oils and potlis prepared from authentic recipes — never cheap mineral-oil blends or synthetic fragrances.',
+    title: 'Quality Oils',
+    desc: 'We use warm, skin-friendly massage oils and gentle aroma blends — never cheap mineral-oil mixes or harsh synthetic fragrances.',
   },
   {
     icon: (
@@ -19,7 +19,7 @@ const VALUES = [
       </svg>
     ),
     title: 'Personalised Care',
-    desc: 'Every session begins with a consultation. We assess your dosha, health concerns and goals before selecting the right oils, technique and pressure for you.',
+    desc: 'Every session begins with a quick chat. We ask about your problem areas, comfort and goals before choosing the right oil, technique and pressure for you.',
   },
   {
     icon: (
@@ -47,7 +47,7 @@ const VALUES = [
       </svg>
     ),
     title: 'Experienced Therapists',
-    desc: 'Trained male and female therapists who understand Ayurvedic marma points, pressure techniques and your comfort above all.',
+    desc: 'Trained male and female therapists who understand pressure points, massage techniques and your comfort above all.',
   },
   {
     icon: (
@@ -56,16 +56,16 @@ const VALUES = [
         <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
       </svg>
     ),
-    title: 'Open 7 Days',
-    desc: 'We are open every day from 10:00 AM to 9:30 PM. Walk-ins welcome, advance booking preferred for your preferred time slot.',
+    title: 'Open 24 Hours',
+    desc: 'We are open round the clock, every day of the week. Walk-ins welcome any time, advance booking preferred for your preferred slot.',
   },
 ]
 
 const STATS = [
   { value: '10+', label: 'Years of healing' },
-  { value: '22+', label: 'Therapy rituals' },
+  { value: '12+', label: 'Massage styles' },
   { value: '4.9★', label: 'Google rating' },
-  { value: '7 days', label: 'Open weekly' },
+  { value: '24/7', label: 'Always open' },
 ]
 
 export default function AboutPage() {
@@ -84,8 +84,8 @@ export default function AboutPage() {
       <div className="page-hero">
         <div className="wrap">
           <span className="eyebrow">Our Story</span>
-          <h1>About RS Ayurvedic</h1>
-          <p className="lead">A neighbourhood spa with a singular purpose — bringing genuine Ayurvedic healing to the heart of Pahar Ganj.</p>
+          <h1>About RS Therapy Spa</h1>
+          <p className="lead">A neighbourhood massage spa with a singular purpose — bringing genuine relaxation and relief to the heart of Pahar Ganj.</p>
         </div>
       </div>
 
@@ -96,19 +96,19 @@ export default function AboutPage() {
             <span className="eyebrow">Who we are</span>
             <h2 style={{ marginTop: '.85rem', fontSize: 'clamp(1.8rem,3.8vw,2.8rem)' }}>Rooted in tradition.<br />Built for today.</h2>
             <p style={{ color: 'var(--cream-dim)', marginTop: '1rem', lineHeight: 1.8 }}>
-              RS Ayurvedic Therapy Spa was founded with one mission: to make genuine Ayurvedic healing accessible in the heart of New Delhi. Nestled on Nalwa Street in Pahar Ganj — just steps from the Ramakrishna Ashram Marg metro — we have been caring for locals, working professionals and travellers from across the world.
+              RS Therapy Spa was founded with one mission: to make a genuinely good massage accessible in the heart of New Delhi. Nestled on Nalwa Street in Pahar Ganj — just steps from the Ramakrishna Ashram Marg metro — we have been caring for locals, working professionals and travellers from across the world.
             </p>
             <p style={{ color: 'var(--cream-dim)', marginTop: '1rem', lineHeight: 1.8 }}>
-              Our philosophy is rooted in the ancient texts of Ayurveda, the 5,000-year-old science of life. We believe no two bodies are the same, so no two sessions should be either. Every visit begins with a brief consultation to understand your <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>dosha</em>, current health concerns and goals — only then does your therapist personalise the oils, technique and pressure for you.
+              We believe no two bodies are the same, so no two massages should be either. Every visit begins with a quick chat to understand your <em style={{ color: 'var(--gold)', fontStyle: 'normal' }}>problem areas</em>, comfort and goals — only then does your therapist choose the right oil, technique and pressure for you.
             </p>
             <p style={{ color: 'var(--cream-dim)', marginTop: '1rem', lineHeight: 1.8 }}>
-              We source authentic Ayurvedic oils prepared according to classical recipes and use fresh herbal potlis for every session. No mineral oil blends. No synthetic fragrances. Just the real thing.
+              We use warm, skin-friendly massage oils and gentle aroma blends for every session. No cheap mineral-oil mixes. No harsh synthetic fragrances. Just a clean, relaxing massage done well.
             </p>
           </div>
           <div className="about-img-wrap rv-r">
             <img
               src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1000&auto=format&fit=crop"
-              alt="Ayurvedic spa session with herbal oils"
+              alt="Relaxing oil massage session at the spa"
               style={{ width: '100%', borderRadius: 'var(--radius)', objectFit: 'cover', aspectRatio: '4/5', border: '1px solid var(--line)' }}
             />
           </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
           <span className="eyebrow" style={{ justifyContent: 'center' }}>Ready to experience it?</span>
           <h2 style={{ marginTop: '.85rem', fontSize: 'clamp(1.8rem,3.8vw,2.6rem)' }}>Your healing begins here</h2>
           <p style={{ color: 'var(--cream-dim)', marginTop: '.8rem', maxWidth: '44ch', margin: '.8rem auto 0' }}>
-            Book your session online or walk in — we're open every day, 10 AM to 9:30 PM.
+            Book your session online or walk in — we're open 24 hours, every day of the week.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: '2rem' }}>
             <Link to="/booking" className="btn btn-gold">
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
-            <Link to="/services" className="btn btn-ghost">View All Therapies</Link>
+            <Link to="/services" className="btn btn-ghost">View All Massages</Link>
           </div>
         </div>
       </section>

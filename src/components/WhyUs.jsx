@@ -6,8 +6,8 @@ const REASONS = [
         <path d="M12 21c-1-4-1-7 2-11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
       </svg>
     ),
-    title: 'Genuine herbal oils',
-    desc: 'We use traditional Ayurvedic oils and fresh herbal potlis — never cheap mineral-oil blends.',
+    title: 'Quality massage oils',
+    desc: 'We use warm, skin-friendly oils and gentle aroma blends — never cheap mineral-oil mixes.',
   },
   {
     icon: (
@@ -16,7 +16,7 @@ const REASONS = [
       </svg>
     ),
     title: 'Trained therapists',
-    desc: 'Experienced male and female therapists who understand pressure, marma points and your comfort.',
+    desc: 'Experienced male and female therapists who understand pressure, problem areas and your comfort.',
   },
   {
     icon: (

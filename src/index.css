@@ -625,3 +625,36 @@ footer{border-top:1px solid var(--line);padding:2.6rem 0 2.2rem;background:var(-
   .svc-book-cta{padding:1.5rem}
   .svc-view-all{padding:1.2rem}
 }
+
+/* ── Storefront / Visit-us photo section ───────────────────── */
+.storefront{background:var(--ink-2);border-block:1px solid var(--line)}
+.store-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.8rem,4vw,3.4rem);
+  align-items:center;
+}
+.store-photo{position:relative;border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 30px 70px -34px rgba(0,0,0,.7);
+  aspect-ratio:3/2;background:var(--ink);
+}
+.store-photo img{width:100%;height:100%;object-fit:cover;display:block;
+  transform:scale(1.04);transition:transform 1.4s var(--ease)}
+.store-photo:hover img{transform:scale(1)}
+.store-photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(19,36,26,.7));pointer-events:none}
+.store-photo-badge{position:absolute;left:1rem;bottom:1rem;z-index:2;
+  background:rgba(19,36,26,.78);backdrop-filter:blur(6px);
+  border:1px solid var(--line);border-radius:12px;padding:.7rem .95rem;
+  font-family:var(--font-display);color:var(--cream);font-size:1rem;line-height:1.2}
+.store-photo-badge span{display:block;font-family:var(--font-body);font-size:.66rem;
+  font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem}
+.store-copy h2{font-size:clamp(1.7rem,4vw,2.7rem);margin:.8rem 0 .9rem;color:var(--cream)}
+.store-copy p{color:var(--cream-dim);margin-bottom:1.6rem;max-width:46ch}
+
+@media (max-width:860px){
+  .store-grid{grid-template-columns:1fr;gap:1.8rem}
+  .store-photo{aspect-ratio:16/10;order:-1}
+}
+@media (max-width:480px){
+  .store-photo{aspect-ratio:4/3}
+  .store-photo-badge{font-size:.9rem;left:.7rem;bottom:.7rem;padding:.55rem .8rem}
+}

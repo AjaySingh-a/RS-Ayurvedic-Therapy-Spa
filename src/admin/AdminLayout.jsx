@@ -47,7 +47,7 @@ export default function AdminLayout({ session, children }) {
     <div className="admin-root">
       <aside className="adm-sidebar">
         <div className="adm-sidebar-logo">
-          <h2>RS Ayurvedic Spa</h2>
+          <h2>RS Therapy Spa</h2>
           <span>Admin Panel</span>
         </div>
 
@@ -82,7 +82,7 @@ export default function AdminLayout({ session, children }) {
 
       <main className="adm-main">
         <div className="adm-topbar">
-          <span className="adm-topbar-title">🌿 RS Ayurvedic Spa — Admin</span>
+          <span className="adm-topbar-title">🌿 RS Therapy Spa — Admin</span>
           <span className="adm-topbar-date">{today}</span>
         </div>
         <div className="adm-content">{children}</div>

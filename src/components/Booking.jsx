@@ -18,8 +18,8 @@ export default function Booking() {
     const date = new Date(g('bDate')).toLocaleDateString('en-IN', {
       weekday: 'short', day: 'numeric', month: 'short', year: 'numeric',
     })
-    let msg = `🌿 *Booking Request — RS Ayurvedic Therapy Spa*\n\n` +
-      `*Name:* ${g('bName')}\n*Guests:* ${g('bGuests')}\n*Therapy:* ${g('bService')}\n` +
+    let msg = `🌿 *Booking Request — RS Therapy Spa*\n\n` +
+      `*Name:* ${g('bName')}\n*Guests:* ${g('bGuests')}\n*Massage:* ${g('bService')}\n` +
       `*Date:* ${date}\n*Time:* ${g('bTime')}`
     const note = g('bNote')
     if (note) msg += `\n*Note:* ${note}`
@@ -38,15 +38,15 @@ export default function Booking() {
             <div className="step">
               <b>1</b>
               <div>
-                <h4>Choose your therapy</h4>
-                <p>Pick a ritual, or let us suggest one when you arrive.</p>
+                <h4>Choose your massage</h4>
+                <p>Pick a massage, or let us suggest one when you arrive.</p>
               </div>
             </div>
             <div className="step">
               <b>2</b>
               <div>
                 <h4>Pick a date &amp; time</h4>
-                <p>We're open every day, morning to late evening.</p>
+                <p>We're open 24 hours, every day of the week.</p>
               </div>
             </div>
             <div className="step">
@@ -74,14 +74,14 @@ export default function Booking() {
               </select>
             </div>
             <div className="field full">
-              <label htmlFor="bService">Therapy</label>
+              <label htmlFor="bService">Massage</label>
               <select id="bService">
-                <option>Abhyanga — warm oil full body</option>
-                <option>Shirodhara — forehead oil stream</option>
-                <option>Potli — herbal compress massage</option>
-                <option>Deep Tissue massage</option>
-                <option>Swedish relaxation massage</option>
-                <option>Head, neck &amp; foot therapy</option>
+                <option>Full Body Oil Massage (60–90 min)</option>
+                <option>Swedish Massage (60 min)</option>
+                <option>Deep Tissue Massage (60–90 min)</option>
+                <option>Aromatherapy Massage (60 min)</option>
+                <option>Head &amp; Champi Massage (30 min)</option>
+                <option>Foot Reflexology (45 min)</option>
                 <option>Not sure — suggest for me</option>
               </select>
             </div>

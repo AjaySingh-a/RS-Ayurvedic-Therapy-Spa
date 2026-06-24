@@ -27,7 +27,7 @@ export default function AdminLogin({ session }) {
     <div className="admin-login-page">
       <div className="admin-login-card">
         <div className="admin-login-logo">
-          <h1>🌿 RS Ayurvedic Spa</h1>
+          <h1>🌿 RS Therapy Spa</h1>
           <p>Admin Panel — Sign in to continue</p>
         </div>
 

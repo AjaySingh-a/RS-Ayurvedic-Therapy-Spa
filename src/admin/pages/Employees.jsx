@@ -60,7 +60,7 @@ function EmployeeModal({ employee, onClose, onSave }) {
               <input
                 value={form.specializations}
                 onChange={e => set('specializations', e.target.value)}
-                placeholder="Abhyanga, Shirodhara, Deep Tissue"
+                placeholder="Full Body, Deep Tissue, Aromatherapy"
               />
             </div>
             <div className="adm-field full">

@@ -4,6 +4,7 @@ import Marquee from '../components/Marquee'
 import Services from '../components/Services'
 import Finder from '../components/Finder'
 import WhyUs from '../components/WhyUs'
+import Storefront from '../components/Storefront'
 import Testimonials from '../components/Testimonials'
 import Contact from '../components/Contact'
 
@@ -31,6 +32,7 @@ export default function Home() {
       <Services />
       <Finder />
       <WhyUs />
+      <Storefront />
       <Testimonials />
       <Contact />
     </>

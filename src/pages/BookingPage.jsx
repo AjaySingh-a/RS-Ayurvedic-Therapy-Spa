@@ -6,28 +6,18 @@ const WA_NUMBER = '919528683405'
 const waLink = msg => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`
 
 const SERVICES_LIST = [
-  'Abhyanga — warm oil full body (60–90 min)',
-  'Shirodhara — forehead oil stream (45–60 min)',
-  'Potli — herbal compress massage (60 min)',
-  'Deep Tissue massage (60–90 min)',
-  'Swedish relaxation massage (60 min)',
-  'Head, neck & foot therapy (30–45 min)',
-  'Panchakarma Detox (90–120 min)',
-  'Udvartana — herbal powder massage (45–60 min)',
-  'Kizhi — herbal pouch therapy (60 min)',
-  'Nasyam — nasal cleanse (30–45 min)',
-  'Netra Tarpana — eye treatment (30 min)',
-  'Kati Vasti — lower back oil (45 min)',
-  'Pizhichil — royal oil bath (60–90 min)',
-  'Mukha Lepam — Ayurvedic facial (45–60 min)',
-  'Reflexology (45–60 min)',
-  'Hot Stone therapy (60–75 min)',
+  'Full Body Oil Massage (60–90 min)',
+  'Swedish Massage (60 min)',
+  'Deep Tissue Massage (60–90 min)',
+  'Aromatherapy Massage (60 min)',
+  'Balinese Massage (60–90 min)',
+  'Thai Oil Massage (60–90 min)',
+  'Hot Stone Massage (60–75 min)',
+  'Back, Neck & Shoulder Massage (30–45 min)',
+  'Head & Champi Massage (30 min)',
+  'Foot Reflexology (45 min)',
   'Couple Massage (60–90 min)',
-  'Marma Therapy (60–75 min)',
-  'Navarakizhi — rice pouch massage (60–75 min)',
-  'Greeva Vasti — neck oil (45 min)',
-  'Janu Vasti — knee oil (45 min)',
-  'Chakra Balancing (60–75 min)',
+  'Four-Hand Massage (60 min)',
   'Not sure — suggest for me',
 ]
 
@@ -75,8 +65,8 @@ export default function BookingPage() {
     const fmtDate = new Date(date).toLocaleDateString('en-IN', {
       weekday: 'short', day: 'numeric', month: 'short', year: 'numeric',
     })
-    let msg = `🌿 *Booking Request — RS Ayurvedic Therapy Spa*\n\n` +
-      `*Name:* ${name}\n*Phone:* ${phone || 'Not provided'}\n*Guests:* ${guests}\n*Therapy:* ${service}\n` +
+    let msg = `🌿 *Booking Request — RS Therapy Spa*\n\n` +
+      `*Name:* ${name}\n*Phone:* ${phone || 'Not provided'}\n*Guests:* ${guests}\n*Massage:* ${service}\n` +
       `*Date:* ${fmtDate}\n*Time:* ${time}`
     if (note) msg += `\n*Note:* ${note}`
     msg += `\n\nPlease confirm my slot. Thank you!`
@@ -109,15 +99,15 @@ export default function BookingPage() {
               <div className="step">
                 <b>1</b>
                 <div>
-                  <h4>Choose your therapy</h4>
-                  <p>Pick from 22 rituals, or let us suggest the right one for you.</p>
+                  <h4>Choose your massage</h4>
+                  <p>Pick from our full menu, or let us suggest the right one for you.</p>
                 </div>
               </div>
               <div className="step">
                 <b>2</b>
                 <div>
                   <h4>Pick a date &amp; time</h4>
-                  <p>We're open every day, 10 AM to 9:30 PM. Walk-ins also welcome.</p>
+                  <p>We're open 24 hours, every day of the week. Walk-ins also welcome.</p>
                 </div>
               </div>
               <div className="step">
@@ -142,7 +132,7 @@ export default function BookingPage() {
                   <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8"/>
                   <path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
                 </svg>
-                <span>Open Mon–Sun · 10:00 AM – 9:30 PM</span>
+                <span>Open 24 Hours · Mon–Sun</span>
               </div>
               <div className="binfo-card">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -153,7 +143,7 @@ export default function BookingPage() {
             </div>
 
             <Link to="/services" className="btn btn-ghost" style={{ alignSelf: 'flex-start', marginTop: '.5rem' }}>
-              Browse all therapies first →
+              Browse all massages first →
             </Link>
           </div>
 
@@ -177,7 +167,7 @@ export default function BookingPage() {
                 </select>
               </div>
               <div className="field full">
-                <label htmlFor="bService">Therapy</label>
+                <label htmlFor="bService">Massage</label>
                 <select id="bService">
                   {SERVICES_LIST.map(s => <option key={s}>{s}</option>)}
                 </select>

@@ -1,6 +1,6 @@
 const ITEMS = [
-  'Abhyanga', 'Shirodhara', 'Potli Massage', 'Deep Tissue',
-  'Swedish Relaxation', 'Head & Shoulder Relief', 'Foot Reflexology',
+  'Full Body Oil Massage', 'Swedish Massage', 'Deep Tissue', 'Aromatherapy',
+  'Hot Stone', 'Head & Champi', 'Foot Reflexology', 'Couple Massage',
 ]
 
 function MarqueeContent() {

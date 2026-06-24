@@ -66,7 +66,7 @@ export default function ContactPage() {
                 <div>
                   <h4>Open Hours</h4>
                   <div className="hours">
-                    <span><b>Mon – Sun</b></span><span>10:00 AM – 9:30 PM</span>
+                    <span><b>Mon – Sun</b></span><span>Open 24 Hours</span>
                     <span><b>Walk-ins</b></span><span>Welcome, booking preferred</span>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                   <h4>WhatsApp</h4>
                   <p>
                     <a
-                      href="https://wa.me/919528683405?text=Hi%20RS%20Ayurvedic%20Therapy%20Spa%2C%20I%27d%20like%20to%20enquire."
+                      href="https://wa.me/919528683405?text=Hi%20RS%20Therapy%20Spa%2C%20I%27d%20like%20to%20enquire."
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -111,7 +111,7 @@ export default function ContactPage() {
 
             <div className="map-frame rv-r">
               <iframe
-                title="RS Ayurvedic Therapy Spa location"
+                title="RS Therapy Spa location"
                 src="https://www.google.com/maps?q=Nalwa%20Street%2C%20Pahar%20Ganj%2C%20New%20Delhi%20110055&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
