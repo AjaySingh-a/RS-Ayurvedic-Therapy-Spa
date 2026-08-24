@@ -1,5 +1,8 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import Seo from '../components/Seo'
+import { servicesItemListSchema, breadcrumbSchema } from '../lib/schema'
+import { trackWhatsApp } from '../lib/analytics'
 
 const WA_NUMBER = '919528683405'
 const waLink = msg => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`
@@ -161,6 +164,18 @@ export default function ServicesPage() {
 
   return (
     <>
+      <Seo
+        title="All Massage Services & Prices in Pahar Ganj, Delhi | RS Therapy Spa"
+        description="Full menu of 12+ massages in Pahar Ganj, New Delhi — full body oil, deep tissue, Thai, Balinese, hot stone, couple & four-hand massage, with transparent prices from ₹500. Open 24 hours."
+        path="/services"
+        jsonLd={[
+          servicesItemListSchema(),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'All Massages', path: '/services' },
+          ]),
+        ]}
+      />
       <div className="page-hero">
         <div className="wrap">
           <span className="eyebrow">Full Menu</span>
@@ -237,6 +252,7 @@ export default function ServicesPage() {
                         href={waLink(`Hi RS Therapy Spa! I'd like to know more about the ${svc.wa}. Could you share details and availability?`)}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackWhatsApp('services_page_card', svc.wa)}
                       >
                         Enquire →
                       </a>
@@ -267,6 +283,7 @@ export default function ServicesPage() {
                 href="https://wa.me/919528683405?text=Hi!%20I%20need%20help%20choosing%20the%20right%20massage.%20Can%20you%20suggest%20one%20for%20me%3F"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsApp('services_page_help_cta')}
               >
                 Ask on WhatsApp
               </a>

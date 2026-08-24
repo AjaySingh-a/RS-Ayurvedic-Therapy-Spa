@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Seo from '../components/Seo'
+import { breadcrumbSchema } from '../lib/schema'
 
 const VALUES = [
   {
@@ -81,6 +83,15 @@ export default function AboutPage() {
 
   return (
     <>
+      <Seo
+        title="About Us — RS Therapy Spa, Pahar Ganj, New Delhi"
+        description="RS Therapy Spa has cared for locals, professionals and travellers in Pahar Ganj, New Delhi for 10+ years. Trained therapists, quality oils, private rooms — open 24 hours."
+        path="/about"
+        jsonLd={breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'About Us', path: '/about' },
+        ])}
+      />
       <div className="page-hero">
         <div className="wrap">
           <span className="eyebrow">Our Story</span>

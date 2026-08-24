@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+import { trackWhatsApp } from '../lib/analytics'
+
 const WA_NUMBER = '919528683405'
 const waLink = msg => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`
 
@@ -82,6 +84,7 @@ export default function Services() {
                     href={waLink(`Hi RS Therapy Spa! I'd like to know more about the ${svc.wa}. Could you share details and availability?`)}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsApp('home_page_card', svc.wa)}
                   >
                     Enquire →
                   </a>

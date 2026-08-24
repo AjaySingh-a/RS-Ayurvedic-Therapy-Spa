@@ -6,7 +6,10 @@ import Finder from '../components/Finder'
 import WhyUs from '../components/WhyUs'
 import Storefront from '../components/Storefront'
 import Testimonials from '../components/Testimonials'
+import Faq from '../components/Faq'
 import Contact from '../components/Contact'
+import Seo from '../components/Seo'
+import { faqSchema } from '../lib/schema'
 
 export default function Home() {
   useEffect(() => {
@@ -27,6 +30,12 @@ export default function Home() {
 
   return (
     <>
+      <Seo
+        title="RS Therapy Spa — Best Massage Spa in Pahar Ganj, New Delhi | Book Now"
+        description="Relaxing full body oil massage in Pahar Ganj, New Delhi. Deep tissue, aromatherapy, Thai, hot stone & couple massage. Open 24 hours, 2 min from Ramakrishna Ashram Marg metro. Call or WhatsApp to book."
+        path="/"
+        jsonLd={faqSchema()}
+      />
       <Hero />
       <Marquee />
       <Services />
@@ -34,6 +43,7 @@ export default function Home() {
       <WhyUs />
       <Storefront />
       <Testimonials />
+      <Faq />
       <Contact />
     </>
   )

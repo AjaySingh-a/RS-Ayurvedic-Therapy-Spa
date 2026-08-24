@@ -1,5 +1,8 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Seo from '../components/Seo'
+import { breadcrumbSchema } from '../lib/schema'
+import { trackCall, trackWhatsApp } from '../lib/analytics'
 
 export default function ContactPage() {
   useEffect(() => {
@@ -14,6 +17,15 @@ export default function ContactPage() {
 
   return (
     <>
+      <Seo
+        title="Contact & Directions — RS Therapy Spa, Nalwa Street, Pahar Ganj"
+        description="Visit RS Therapy Spa at 2473 Nalwa Street, Pahar Ganj, New Delhi — 2 minutes from Ramakrishna Ashram Marg metro. Call or WhatsApp +91 95286 83405. Open 24 hours."
+        path="/contact"
+        jsonLd={breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Contact', path: '/contact' },
+        ])}
+      />
       <div className="page-hero">
         <div className="wrap">
           <span className="eyebrow">Find us</span>
@@ -52,7 +64,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4>Call or WhatsApp</h4>
-                  <p><a href="tel:+919528683405">+91 95286 83405</a></p>
+                  <p><a href="tel:+919528683405" onClick={() => trackCall('contact_page')}>+91 95286 83405</a></p>
                 </div>
               </div>
 
@@ -85,6 +97,7 @@ export default function ContactPage() {
                       href="https://wa.me/919528683405?text=Hi%20RS%20Therapy%20Spa%2C%20I%27d%20like%20to%20enquire."
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsApp('contact_page')}
                     >
                       Chat with us on WhatsApp →
                     </a>

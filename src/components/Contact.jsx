@@ -1,3 +1,5 @@
+import { trackCall } from '../lib/analytics'
+
 export default function Contact() {
   return (
     <section className="section" id="visit">
@@ -33,7 +35,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4>Call or WhatsApp</h4>
-                <p><a href="tel:+919528683405">+91 95286 83405</a></p>
+                <p><a href="tel:+919528683405" onClick={() => trackCall('home_page')}>+91 95286 83405</a></p>
               </div>
             </div>
 

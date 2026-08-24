@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
+import Seo from '../components/Seo'
+import { breadcrumbSchema } from '../lib/schema'
+import { trackBookingSubmit, trackCall } from '../lib/analytics'
 
 const WA_NUMBER = '919528683405'
 const waLink = msg => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`
@@ -71,12 +74,22 @@ export default function BookingPage() {
     if (note) msg += `\n*Note:* ${note}`
     msg += `\n\nPlease confirm my slot. Thank you!`
 
+    trackBookingSubmit(service)
     setSubmitting(false)
     window.open(waLink(msg), '_blank')
   }
 
   return (
     <>
+      <Seo
+        title="Book a Massage Session Online — RS Therapy Spa, Pahar Ganj"
+        description="Book your massage at RS Therapy Spa in Pahar Ganj, New Delhi. No advance payment — pick a massage, date and time, confirm instantly on WhatsApp. Open 24 hours."
+        path="/booking"
+        jsonLd={breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Book a Session', path: '/booking' },
+        ])}
+      />
       <div className="page-hero">
         <div className="wrap">
           <span className="eyebrow">Reserve your spot</span>
@@ -138,7 +151,7 @@ export default function BookingPage() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                   <path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.8a16 16 0 0 0 6.2 6.2l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z" stroke="currentColor" strokeWidth="1.8"/>
                 </svg>
-                <span><a href="tel:+919528683405" style={{ color: 'inherit' }}>+91 95286 83405</a></span>
+                <span><a href="tel:+919528683405" style={{ color: 'inherit' }} onClick={() => trackCall('booking_page')}>+91 95286 83405</a></span>
               </div>
             </div>
 
